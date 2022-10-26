@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx
+
+spec:
+ selector:
+   matchLabels:
+    type: nginx
+ replicas: 2
+ template:
+   metadata:
+     labels:
+       type: nginx
+   spec:
+    containers:
+    - name: container
+      image: conna/nginx:latest
+      ports:
+      - containerPort: 80
+      resources:
+        requests:
+          cpu: 100m
+        limits:
+          cpu: 200m
