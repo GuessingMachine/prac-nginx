@@ -7,12 +7,14 @@ spec:
    matchLabels:
     type: nginx
     app: frontend
+    version: ver.latest
  replicas: 2
  template:
    metadata:
      labels:
        type: nginx
        app: frontend
+       version: ver.latest
    spec:
     containers:
     - name: container
